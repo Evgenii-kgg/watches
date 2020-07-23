@@ -36,3 +36,154 @@
     transform: rotate(360deg);
   }
 }
+
+
+body{
+  background-color: lightgrey;
+}
+
+.clock-container {
+  background-color: lightblue;
+  position: relative;
+  margin: auto;
+  width: 250px;
+  text-align: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-style: groove;
+  border-width: 1px;
+  border-color: #5c0120;
+}
+
+.clock{
+background-color: white;
+width: auto;
+padding: 5px;
+align-items: center;
+justify-content: space-around; 
+}
+
+.clock-title{
+width: 100%;
+display: flex;
+justify-content: center;
+aligh-items: center;  
+}
+
+.clock-name{
+color: #5c0120;
+font-size: 20px;
+padding: 10px;
+}
+
+.items {
+width: 100%;
+background: white;  
+
+.header {
+  width: 50%;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+}
+
+.dropdownbtn {
+  background-color: #D2691E;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  width: 2em;
+  cursor: pointer;
+
+  &:before{
+    cursor: pointer;
+    border-radius: 1px;
+    height: 4px;
+    width: 35px;
+    top: 25%;
+    background: black;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+&:after{
+  content: "";
+    cursor: pointer;
+    border-radius: 1px;
+    height: 4px;
+    width: 35px;
+    top: 75%;
+    background: black;
+    position: absolute;
+    display: block;
+    content: '';
+    transform-origin: 50%;
+    transition: all 0.3s ease-in-out 0s;
+}
+}
+
+.dropdownbtn {
+  background-color: #D2691E;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  width: 2em;
+  cursor: pointer;
+
+&.open{
+  &:before{
+    cursor: pointer;
+    border-radius: 1px;
+    height: 4px;
+    width: 35px;
+    top: 50%;
+    background: black;
+    position: absolute;
+    display: block;
+    content: '';
+    transform-origin: 50%;
+    transform: rotate(45deg);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+&:after{
+  content: "";
+    cursor: pointer;
+    border-radius: 1px;
+    height: 4px;
+    width: 35px;
+    top: 50%;
+    background: black;
+    position: absolute;
+    display: block;
+    content: '';
+    transform-origin: 50%;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-in-out 0s;
+  } 
+}
+}
+
+.time{
+color: #5c0120;
+padding: 5px;
+font-size: 20px;
+transition: margin-top 0.3s ease-in-out 1s;
+}
+
+.show{
+display:block;
+}
+
+.hide{
+display:none;   
+}
