@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 
 import { TextField, Select } from "@material-ui/core";
 
 function Form(props) {
+  const [fields, setFields] = useState({data:'',name:'', id:props.id})
+
   console.log(props);
 
   const timeZone = [
@@ -34,6 +36,13 @@ function Form(props) {
     12,
   ];
 
+  const handleChange = (event) => {
+    setFields({...fields, [event.target.name]: event.target.value})
+  };
+
+
+console.log(fields);
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <label>
@@ -45,8 +54,8 @@ function Form(props) {
           type="time"
           defaultValue={0}
           name="data"
-          value={props.data}
-          onChange={props.handleChange}
+          value={fields.data}
+          onChange={handleChange}
         >
           {timeZone.map((zone) => (
             <option  value={zone}>{zone}</option>
@@ -60,11 +69,11 @@ function Form(props) {
         <TextField
           type="text"
           name="name"
-          value={props.name}
-          onChange={props.handleChange}
+          value={fields.name}
+          onChange={handleChange}
         />
       </label>
-      <input type="submit" value="Добавить" onClick={props.Add} />
+      <input type="submit" value="Добавить" onClick={()=> props.add(fields)} />
     </div>
   );
 }
